@@ -29,13 +29,13 @@ modules:
       - type: extra-data
         filename: Linux.x86_64-Standalone.tar
         url: https://github.com/clonehero-game/releases/releases/download/v1.1.0.6142-final/Linux.x86_64-Standalone.tar
-        sha1: 63350926e834b72a7ca193d46391199076f91bf3
+        sha256: sha256:572971d93092283c5d0d52006a26b52ab8e8fb128dcfb42a3496de26c8aa231d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/clonehero-game/releases/releases/latest
           tag-query: .tag_name
-          version-query: .tag_name | sub("^V"; "")
-          url-query: '"https://github.com/clonehero-game/releases/releases/download/V" + $tag + "/Linux.x86_64-Standalone.tar"'
+          version-query: .tag_name | sub("^v"; "")
+          url-query: '"https://github.com/clonehero-game/releases/releases/download/v" + $tag + "/Linux.x86_64-Standalone.tar"'
       - type: file
         path: net.clonehero.CloneHero.desktop
       - type: file
@@ -46,8 +46,8 @@ modules:
         dest-filename: apply_extra
         commands:
           - |
-            mkdir -p /app/extra/
-            tar xf Linux.x86_64-Standalone.tar -C /app/extra/
+            mkdir -p /app/extra/clonehero-linux
+            tar xf Linux.x86_64-Standalone.tar -C /app/extra/clonehero-linux/ --strip-components=1
             chmod +x /app/extra/clonehero-linux/clonehero
             rm -rf Linux.x86_64-Standalone.tar
       - type: script
