@@ -30,7 +30,7 @@ modules:
         filename: Linux.x86_64-Standalone.tar
         url: https://github.com/clonehero-game/releases/releases/download/v1.1.0.6142-final/Linux.x86_64-Standalone.tar
         size: 1172653056
-        sha256: sha256:572971d93092283c5d0d52006a26b52ab8e8fb128dcfb42a3496de26c8aa231d
+        sha256: 572971d93092283c5d0d52006a26b52ab8e8fb128dcfb42a3496de26c8aa231d
         x-checker-data:
           type: json
           url: https://api.github.com/repos/clonehero-game/releases/releases/latest
